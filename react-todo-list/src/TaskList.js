@@ -3,13 +3,15 @@ import Task from './Task'
 function TaskList(props){
     const tasks = props.listOfTasks.map(task => {
         return(
-            <Task key={task.id} name = {task.name} /> 
+            <Task clickHandler={() => props.removeHandler(task.id)} key={task.id} name = {task.name} /> 
         );
     });
     return(
-       <ul>
-        {tasks}
-       </ul>
+       <div id="taskList">
+            <ul>
+                {tasks}
+            </ul>
+       </div>
     );
 }
 

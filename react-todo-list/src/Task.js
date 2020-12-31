@@ -1,6 +1,6 @@
 function Task(props){
     return(
-        <li>{props.name}</li>
+        <li onClick={props.clickHandler}>{props.name}</li>
     );
 }
 

@@ -15,7 +15,6 @@ function Form(props){
     return(
         <form onSubmit={handleSubmit}>
             <input id="name" onChange={handleChange} placeholder={props.inputPlaceholder} type="text" />
-            <button type="submit">{ props.buttonLabel }</button>
         </form>
     );
 }

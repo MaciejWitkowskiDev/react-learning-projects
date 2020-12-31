@@ -15,10 +15,18 @@ function App() {
     ])
   }
 
+  const removeTask = (id) => {
+    setTaskList(
+      taskList.filter(task =>{
+        return task.id != id
+      })
+    );
+  }
+
   return (
     <>
-      <TaskList listOfTasks={taskList} />
-      <Form submitHandler={addNewTask} inputPlaceholder="Task name" buttonLabel="Add new todo" />
+      <Form submitHandler={addNewTask} inputPlaceholder="Task name" buttonLabel="Add" />
+      <TaskList removeHandler={removeTask} listOfTasks={taskList} />
     </>
   );
 }
