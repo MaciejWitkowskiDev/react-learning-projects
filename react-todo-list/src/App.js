@@ -5,14 +5,12 @@ import TaskList from './TaskList';
 function App() {
   const [taskList, setTaskList] = useState([]);
   
-  const addNewTask = (e) => {
-    e.preventDefault();
-    console.log(e.target);
+  const addNewTask = (name) => {
     setTaskList([
       ...taskList,
       {
         id: Math.random(),
-        name: e.target.name.value
+        name: name
       }
     ])
   }
