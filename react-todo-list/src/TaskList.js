@@ -1,4 +1,3 @@
-import React, {useState } from "react";
 import Task from './Task'
 
 function TaskList(props){

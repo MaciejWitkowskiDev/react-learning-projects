@@ -7,7 +7,7 @@ function Form(props){
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(value.length == 0) return;
+        if(value.length === 0) return;
         props.submitHandler(value);
         e.target.name.value = '';
         setValue('');
