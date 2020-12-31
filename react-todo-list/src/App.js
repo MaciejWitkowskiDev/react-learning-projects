@@ -5,21 +5,22 @@ import TaskList from './TaskList';
 function App() {
   const [taskList, setTaskList] = useState([]);
   
-  const addMockTodo = () => {
+  const addNewTask = (e) => {
+    e.preventDefault();
+    console.log(e.target);
     setTaskList([
       ...taskList,
       {
-        id: 0,
-        name: 'xD'
+        id: Math.random(),
+        name: e.target.name.value
       }
-    ]);
+    ])
   }
 
   return (
     <>
       <TaskList listOfTasks={taskList} />
-      <Form inputPlaceholder="Task name" buttonLabel="Add new todo" />
-      <button onClick={addMockTodo}>addMockTodo</button>
+      <Form submitHandler={addNewTask} inputPlaceholder="Task name" buttonLabel="Add new todo" />
     </>
   );
 }
